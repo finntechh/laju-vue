@@ -54,7 +54,7 @@
   </header>
 
   <main>
-    <router-view style="border: 3px solid pink;"></router-view>
+    <router-view></router-view>
   </main>
 
   <footer>

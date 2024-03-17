@@ -1,5 +1,31 @@
 
 .home-content {
- 
+    height: 92dvh;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
 }
 
+.home-heading {
+    margin: 5rem 0;
+    font-size: 36pt;
+    font-family: "biocats", sans-serif;
+    letter-spacing: 2px;
+    color: var(--light);
+    text-shadow: 1px 1px 10px black,
+                -1px -1px 10px black;
+}
+
+.home-description {
+    width: 100%;
+    background-color: var(--dark);
+    box-shadow: 1px 1px 10px black;
+}
+
+.home-description p {
+    margin: 2rem 4rem;
+    font-family: "code", sans-serif;
+    letter-spacing: 3px;
+    color: var(--light);
+}

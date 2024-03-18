@@ -5,6 +5,10 @@
         display: none;
     }
 
+    .navDarkmodeBtn {
+        display: none;
+    }
+
     .footer-content {
         padding: 0 10rem;
     }

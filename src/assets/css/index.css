@@ -18,10 +18,15 @@ a {
     src: url("../font/code/code.otf");
 }
 
-
 :root {
     --dark: #0c0c19;
     --light: #fffcf9;
+    --accent: #FFDD0C;
+}
+
+.dark {
+    --light: #0c0c19;
+    --dark: #fffcf9;
     --accent: #FFDD0C;
 }
 
@@ -54,7 +59,7 @@ div, ul, li, a, header, nav {
 header {
     position: sticky;
     top: 0;
-    background-color: var(--light);
+    background-color: #fffcf9;
     min-height: 8vh;
     z-index: 10;
     display: flex;
@@ -89,9 +94,9 @@ nav {
 }
 
 .nav-list-link {
-    color: var(--dark);
+    color: #0c0c19;
     padding: 6px 18px;
-    border: 3px solid var(--dark);
+    border: 3px solid #0c0c19;
     border-radius: 15px;
     font-weight: bold;
     transition-duration: .2s;
@@ -112,7 +117,7 @@ nav {
 .nav-dropdown-btn span {
     height: 6px;
     width: 40px;
-    background-color: var(--dark);
+    background-color: #0c0c19;
     border-radius: 3px;
     margin-top: 3px;
 }
@@ -123,7 +128,7 @@ nav {
 
 .nav-dropdown-menu {
     position: absolute;
-    height: 92vh;
+    height: 190rem;
     top: 100%;
     left: 0;
     width: 100%;
@@ -154,6 +159,18 @@ nav {
     box-shadow: 5px 10px 0px black;
 }
 
+.darkmode {
+    background-color: var(--dark);
+    padding: .4rem .5rem;
+    border-radius: 100%;
+    border: 3px solid var(--light);
+    cursor: pointer;
+}
+
+.darkmode i {
+    color: var(--light);
+}
+
 /* Navbar ende */
 
 
@@ -163,7 +180,7 @@ nav {
 
 footer {
     max-width: 100%;
-    background-color: var(--cream);
+    background-color: var(--light);
 }
 
 .footer-container {
@@ -185,7 +202,7 @@ footer {
 
 .footer-heading h1 {
     font-family: biocats, sans-serif;
-    color: var(--grey);
+    color: var(--dark);
     letter-spacing: 3px;
 }
 
@@ -195,7 +212,7 @@ footer {
 
 .footer-email h2, .footer-email span {
     font-family: monospace, sans-serif;
-    color: var(--grey);
+    color: var(--dark);
     transition-duration: .2s;
 }
 
@@ -221,7 +238,7 @@ footer {
 }
 
 .footer-link {
-    color: var(--grey);
+    color: var(--dark);
     padding: .5rem 2rem;
     transition-duration: .3s;
     font-family: code,sans-serif;

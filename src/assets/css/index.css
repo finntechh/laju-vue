@@ -103,8 +103,8 @@ nav {
 }
 
 .nav-list-link:hover {
-    background-color: var(--dark);
-    color: var(--light);
+    background-color: #0c0c19;
+    color: #fffcf9;
 }
 
 .nav-dropdown-btn {
@@ -161,7 +161,7 @@ nav {
 
 .darkmode {
     background-color: var(--dark);
-    padding: .35rem .5rem;
+    padding: .4rem .5rem;
     border-radius: 100%;
     border: 3px solid var(--light);
     cursor: pointer;

@@ -161,10 +161,12 @@ nav {
 
 .darkmode {
     background-color: var(--dark);
-    padding: .4rem .5rem;
+    padding: .35rem .5rem;
     border-radius: 100%;
     border: 3px solid var(--light);
     cursor: pointer;
+    text-align: center;
+    outline: 1px solid var(--dark);
 }
 
 .darkmode i {

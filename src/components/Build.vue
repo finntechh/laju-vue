@@ -133,16 +133,10 @@ const toggleDropdown = () => {
     if (navDropdownMenu.value) {
         console.log("Nav Menu an \n", navDropdownMenu.value)
         document.body.style.overflow = "hidden";
-
-
     }
     else {
         console.log("Nav Menu aus")
         document.body.style.overflow = "initial";
-
-
     };
 };
-
-
 </script>

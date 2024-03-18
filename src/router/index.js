@@ -1,18 +1,18 @@
-import { createRouter, createWebHashHistory } from "vue-router";
+import { createRouter, createWebHistory } from "vue-router";
 import Home from "@/views/Home.vue";
 import News from "@/views/News.vue";
 import UeberUns from "@/views/UeberUns.vue";
 import Kontakt from "@/views/Kontakt.vue";
 import Datenschutz from "@/views/Datenschutz.vue";
 import Impressum from "@/views/Impressum.vue";
-import {computedEager} from "@vueuse/core";
-import {createCommentVNode} from "vue";
+import { computedEager } from "@vueuse/core";
+import { createCommentVNode } from "vue";
 
 let titlePrefix = "";
 let titleSuffix = " - Landjugend Primisweiler";
 
 const router = createRouter({
-  history: createWebHashHistory(import.meta.env.BASE_URL),
+  history: createWebHistory(import.meta.env.BASE_URL),
   routes: [
     {
       path: "/",
@@ -24,7 +24,7 @@ const router = createRouter({
       component: Home,
       meta: {
         titlePrefix: "Home",
-      }
+      },
     },
     {
       path: "/News",
@@ -32,7 +32,7 @@ const router = createRouter({
       component: News,
       meta: {
         titlePrefix: "News",
-      }
+      },
     },
     {
       path: "/Über-uns",
@@ -40,7 +40,7 @@ const router = createRouter({
       component: UeberUns,
       meta: {
         titlePrefix: "Über uns",
-      }
+      },
     },
     {
       path: "/Kontakt",
@@ -48,7 +48,7 @@ const router = createRouter({
       component: Kontakt,
       meta: {
         titlePrefix: "Kontakt",
-      }
+      },
     },
     {
       path: "/Datenschutz",
@@ -56,7 +56,7 @@ const router = createRouter({
       component: Datenschutz,
       meta: {
         titlePrefix: "Datenschutz",
-      }
+      },
     },
     {
       path: "/Impressum",
@@ -64,13 +64,13 @@ const router = createRouter({
       component: Impressum,
       meta: {
         titlePrefix: "Impressum",
-      }
+      },
     },
   ],
 });
 
-router.beforeEach((to, from ) => {
+router.beforeEach((to, from) => {
   document.title = to.meta?.titlePrefix + titleSuffix ?? "Default Title";
-})
+});
 
 export default router;

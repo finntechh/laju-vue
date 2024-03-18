@@ -34,9 +34,12 @@
                 </ul>
 
                 <div ref="navBtn" class="nav-dropdown-btn" @click="toggleDropdown">
-                    <span ref="rect1" class="nav-button-rect1"></span>
-                    <span ref="rect2" class="nav-button-rect2"></span>
-                    <span ref="rect3" class="nav-button-rect3"></span>
+                    <span
+                        :class="{ 'nav-button-rect1-active': navDropdownMenu, 'nav-button-rect1': !navDropdownMenu }"></span>
+                    <span
+                        :class="{ 'nav-button-rect2-active': navDropdownMenu, 'nav-button-rect2': !navDropdownMenu }"></span>
+                    <span
+                        :class="{ 'nav-button-rect3-active': navDropdownMenu, 'nav-button-rect3': !navDropdownMenu }"></span>
                 </div>
 
                 <div class="nav-dropdown-menu" v-show="navDropdownMenu">
@@ -124,13 +127,22 @@ const toggleDark = useToggle(isDark);
 
 const navDropdownMenu = ref(false);
 
+
 const toggleDropdown = () => {
     navDropdownMenu.value = !navDropdownMenu.value;
     if (navDropdownMenu.value) {
-        console.log("Nav Menu an")
+        console.log("Nav Menu an \n", navDropdownMenu.value)
+        document.body.style.overflow = "hidden";
+
+
     }
     else {
         console.log("Nav Menu aus")
+        document.body.style.overflow = "initial";
+
+
     };
 };
+
+
 </script>

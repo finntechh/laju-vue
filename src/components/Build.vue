@@ -1,23 +1,22 @@
 <template>
-
     <header>
         <nav>
             <div class="nav-logo-container">
                 <router-link to="/">
-                    <img class="nav-logo" src="../assets/images/logo/logo-hor.png" alt="logo">
+                    <img class="nav-logo" src="../assets/images/logo/logo-hor.png" alt="logo" />
                 </router-link>
             </div>
 
             <div class="navDarkmodeBtn">
                 <button @click="toggleDark()" class="darkmode">
-                    <i class='fas fa-sun'></i>
+                    <i class="fas fa-sun"></i>
                 </button>
             </div>
 
             <div class="nav-menu">
                 <ul class="nav-list">
                     <button @click="toggleDark()" class="darkmode">
-                        <i class='fas fa-sun'></i>
+                        <i class="fas fa-sun"></i>
                     </button>
                     <li class="nav-list-item">
                         <router-link class="nav-list-link" to="/">Home</router-link>
@@ -34,12 +33,18 @@
                 </ul>
 
                 <div ref="navBtn" class="nav-dropdown-btn" @click="toggleDropdown">
-                    <span
-                        :class="{ 'nav-button-rect1-active': navDropdownMenu, 'nav-button-rect1': !navDropdownMenu }"></span>
-                    <span
-                        :class="{ 'nav-button-rect2-active': navDropdownMenu, 'nav-button-rect2': !navDropdownMenu }"></span>
-                    <span
-                        :class="{ 'nav-button-rect3-active': navDropdownMenu, 'nav-button-rect3': !navDropdownMenu }"></span>
+                    <span :class="{
+                    'nav-button-rect1-active': navDropdownMenu,
+                    'nav-button-rect1': !navDropdownMenu,
+                }"></span>
+                    <span :class="{
+                    'nav-button-rect2-active': navDropdownMenu,
+                    'nav-button-rect2': !navDropdownMenu,
+                }"></span>
+                    <span :class="{
+                    'nav-button-rect3-active': navDropdownMenu,
+                    'nav-button-rect3': !navDropdownMenu,
+                }"></span>
                 </div>
 
                 <div class="nav-dropdown-menu" v-show="navDropdownMenu">
@@ -73,13 +78,19 @@
                     <h1>Get in touch</h1>
                     <div class="footer-email">
                         <h2>
-                            Schreib uns eine Email: <a style="text-wrap: nowrap;"
+                            Schreib uns eine Email:
+                            <a style="text-wrap: nowrap"
                                 href="mailto:#"><span>info@landjugend-primisweiler.de</span></a>
                         </h2>
                         <h2>
-                            Komm bei uns vorbei, jeden Mittwoch ab <span
-                                style="cursor: pointer; :hover {color: var(--accent)};">20Uhr</span> im
-                            Landjugendkeller
+                            Komm bei uns vorbei, jeden Mittwoch ab
+                            <span style="
+                  cursor: pointer;
+                  :hover {
+                    color: var(--accent);
+                  }
+                ">20Uhr</span>
+                            im Landjugendkeller
                         </h2>
                     </div>
                 </div>
@@ -108,13 +119,12 @@
             </div>
         </div>
     </footer>
-
 </template>
 
 <script setup>
-import { RouterLink, RouterView } from 'vue-router';
-import { onMounted, ref } from 'vue';
-import { useDark, useToggle } from '@vueuse/core';
+import { RouterLink, RouterView } from "vue-router";
+import { onMounted, ref } from "vue";
+import { useDark, useToggle } from "@vueuse/core";
 
 const isDark = useDark(false, {
     selector: "body",
@@ -127,16 +137,14 @@ const toggleDark = useToggle(isDark);
 
 const navDropdownMenu = ref(false);
 
-
 const toggleDropdown = () => {
     navDropdownMenu.value = !navDropdownMenu.value;
     if (navDropdownMenu.value) {
-        console.log("Nav Menu an \n", navDropdownMenu.value)
+        console.log("Nav Menu an \n", navDropdownMenu.value);
         document.body.style.overflow = "hidden";
-    }
-    else {
-        console.log("Nav Menu aus")
+    } else {
+        console.log("Nav Menu aus");
         document.body.style.overflow = "initial";
-    };
+    }
 };
 </script>

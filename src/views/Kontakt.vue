@@ -1,5 +1,3 @@
 <template>
-    <div>
-        Hier kontaktieren!
-    </div>
+    <div>Hier kontaktieren!</div>
 </template>

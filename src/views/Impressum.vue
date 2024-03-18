@@ -1,5 +1,3 @@
 <template>
-    <div>
-        Impressum
-    </div>
+    <div>Impressum</div>
 </template>

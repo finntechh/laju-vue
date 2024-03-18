@@ -3,5 +3,5 @@
 </template>
 
 <script setup>
-import Build from './components/Build.vue';
+import Build from "./components/Build.vue";
 </script>

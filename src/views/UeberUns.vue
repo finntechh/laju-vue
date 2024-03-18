@@ -1,5 +1,3 @@
 <template>
-    <div>
-        Wer wir sind!
-    </div>
+    <div>Wer wir sind!</div>
 </template>

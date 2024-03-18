@@ -2,7 +2,6 @@
 
     <header>
         <nav>
-
             <div class="nav-logo-container">
                 <router-link to="/">
                     <img class="nav-logo" src="../assets/images/logo/logo-hor.png" alt="logo">
@@ -58,9 +57,7 @@
                         </li>
                     </ul>
                 </div>
-
             </div>
-
         </nav>
     </header>
     <main>

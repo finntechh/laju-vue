@@ -33,18 +33,9 @@
                 </ul>
 
                 <div ref="navBtn" class="nav-dropdown-btn" @click="toggleDropdown">
-                    <span :class="{
-                    'nav-button-rect1-active': navDropdownMenu,
-                    'nav-button-rect1': !navDropdownMenu,
-                }"></span>
-                    <span :class="{
-                    'nav-button-rect2-active': navDropdownMenu,
-                    'nav-button-rect2': !navDropdownMenu,
-                }"></span>
-                    <span :class="{
-                    'nav-button-rect3-active': navDropdownMenu,
-                    'nav-button-rect3': !navDropdownMenu,
-                }"></span>
+                    <span ref="rect1"></span>
+                    <span ref="rect2"></span>
+                    <span ref="rect3"></span>
                 </div>
 
                 <div class="nav-dropdown-menu" v-show="navDropdownMenu">
@@ -133,8 +124,54 @@ const isDark = useDark(false, {
     valueLight: "light",
 });
 
-const toggleDark = useToggle(isDark);
+const rect1 = ref()
+const rect2 = ref()
+const rect3 = ref()
+/*
+onMounted(() => {
+    if (forwardAnimation === "forward") {
+        // Forward animation
+        rect1.value.style.transition = "transform 0.5s";
+        rect3.value.style.transition = "transform 0.5s";
+        rect1.value.style.transform = "translateY(9px)";
+        rect3.value.style.transform = "translateY(-9px)";
 
+        setTimeout(() => {
+            rect2.value.style.backgroundColor = "transparent";
+        }, 500);
+
+        setTimeout(() => {
+            rect1.value.style.transition = "transform 0.5s";
+            rect3.value.style.transition = "transform 0.5s";
+            rect1.value.style.transform = "rotate(45deg)";
+            rect3.value.style.transform = "rotate(-45deg)";
+        }, 500);
+
+        console.log("Dropdown ein");
+    }
+    if (forwardAnimation === "reverse") {
+        // Reverse animation
+        rect1.value.style.transition = "transform 0.5s";
+        rect3.value.style.transition = "transform 0.5s";
+        rect1.value.style.transform = "rotate(0deg)";
+        rect3.value.style.transform = "rotate(0deg)";
+        rect1.value.style.transform = "translateY(9px)";
+        rect3.value.style.transform = "translateY(-9px)";
+
+        setTimeout(() => {
+            rect2.value.style.backgroundColor = "";
+        }, 500);
+
+        setTimeout(() => {
+            rect1.value.style.transform = "translateY(-1%)";
+            rect3.value.style.transform = "translateY(1%)";
+        }, 500);
+
+        console.log("Dropdown aus");
+    }
+});*/
+
+const toggleDark = useToggle(isDark);
 const navDropdownMenu = ref(false);
 
 const toggleDropdown = () => {
@@ -147,4 +184,6 @@ const toggleDropdown = () => {
         document.body.style.overflow = "initial";
     }
 };
+
+
 </script>

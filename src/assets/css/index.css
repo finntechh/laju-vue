@@ -149,13 +149,13 @@ nav {
 }
 
 .nav-dropdown-link {
-    background-color: var(--light);
+    background-color: #fffcf9;
     padding: 16px 40px;
-    border: 3px solid var(--dark);
+    border: 3px solid #0c0c11;
     border-radius: 10px 0 0 10px;
     display: block;
-    color: var(--dark);
-    background-color: var(--light);
+    color: #0c0c11;
+    background-color: #fffcf9;
     box-shadow: 5px 10px 0px black;
 }
 
@@ -285,7 +285,7 @@ footer {
 }
 
 /*  Footer-Ende */
-
+/*
 .nav-button-rect1,
 .nav-button-rect2,
 .nav-button-rect3 {
@@ -339,3 +339,4 @@ footer {
       transform: rotate(-45deg);
     }
   }
+*/

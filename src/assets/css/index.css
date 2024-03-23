@@ -123,7 +123,7 @@ nav {
 }
 
 .nav-button-rect1, .nav-button-rect3 {
-    transform-origin: 7.5px;
+    transform-origin: 7.7px;
 }
 
 .nav-dropdown-menu {
@@ -285,58 +285,3 @@ footer {
 }
 
 /*  Footer-Ende */
-/*
-.nav-button-rect1,
-.nav-button-rect2,
-.nav-button-rect3 {
-    transition-duration:  .5s;
-}
-
-.nav-button-rect1-active,
-.nav-button-rect2-active,
-.nav-button-rect3-active {
-    transition-duration:  .5s;
-}
-
-.nav-button-rect1-active {
-    animation: dropdownInTop .5s linear forwards;
-    transform-origin: 10px;    
-}
-
-.nav-button-rect2-active {
-    background-color: transparent !important;
-}
-
-.nav-button-rect3-active {
-    animation: dropdownInBottom .5s linear forwards;
-    transform-origin: 5px;    
-}
-
-@keyframes dropdownInTop {
-    0% {
-      transform: translateY(0) rotate(0deg);
-    }
-    30% {
-      transform: translateY(9px) rotate(0);
-    }
-    60% {
-        stransform: translateY(9px) rotate(0);}
-    100% {
-      transform: rotate(45deg);
-    }
-  }
-
-  @keyframes dropdownInBottom {
-    0% {
-      transform: translateY(0) rotate(0deg);
-    }
-    30% {
-      transform: translateY(-9px) rotate(0);
-    }
-    60% {
-        transform: translateY(-9px) rotate(0);}
-    100% {
-      transform: rotate(-45deg);
-    }
-  }
-*/

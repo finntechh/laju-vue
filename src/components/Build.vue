@@ -32,10 +32,10 @@
                     </li>
                 </ul>
 
-                <div ref="navBtn" class="nav-dropdown-btn" @click="toggleDropdown">
-                    <span ref="rect1"></span>
+                <div ref="navBtn" class="nav-dropdown-btn" @click="toggleDropdown(); burgerAnimation(navDropdownMenu)">
+                    <span ref="rect1" class="nav-button-rect1"></span>
                     <span ref="rect2"></span>
-                    <span ref="rect3"></span>
+                    <span ref="rect3" class="nav-button-rect3"></span>
                 </div>
 
                 <div class="nav-dropdown-menu" v-show="navDropdownMenu">
@@ -124,63 +124,69 @@ const isDark = useDark(false, {
     valueLight: "light",
 });
 
-const rect1 = ref()
-const rect2 = ref()
-const rect3 = ref()
-/*
-onMounted(() => {
-    if (forwardAnimation === "forward") {
+
+const rect1 = ref(null);
+const rect2 = ref(null);
+const rect3 = ref(null);
+
+
+function burgerAnimation(navDropdownMenu) {
+    const rect1Animate = rect1.value;
+    const rect2Animate = rect2.value;
+    const rect3Animate = rect3.value;
+
+    if (navDropdownMenu) {
+
         // Forward animation
-        rect1.value.style.transition = "transform 0.5s";
-        rect3.value.style.transition = "transform 0.5s";
-        rect1.value.style.transform = "translateY(9px)";
-        rect3.value.style.transform = "translateY(-9px)";
+        rect1Animate.style.transition = "transform 0.5s";
+        rect3Animate.style.transition = "transform 0.5s";
+        rect1Animate.style.transform = "translateY(9px)";
+        rect3Animate.style.transform = "translateY(-9px)";
 
         setTimeout(() => {
-            rect2.value.style.backgroundColor = "transparent";
+            rect2Animate.style.backgroundColor = "transparent";
         }, 500);
 
         setTimeout(() => {
-            rect1.value.style.transition = "transform 0.5s";
-            rect3.value.style.transition = "transform 0.5s";
-            rect1.value.style.transform = "rotate(45deg)";
-            rect3.value.style.transform = "rotate(-45deg)";
+            rect1Animate.style.transition = "transform 0.5s";
+            rect3Animate.style.transition = "transform 0.5s";
+            rect1Animate.style.transform = "rotate(45deg)";
+            rect3Animate.style.transform = "rotate(-45deg)";
         }, 500);
 
-        console.log("Dropdown ein");
     }
-    if (forwardAnimation === "reverse") {
+    else {
         // Reverse animation
-        rect1.value.style.transition = "transform 0.5s";
-        rect3.value.style.transition = "transform 0.5s";
-        rect1.value.style.transform = "rotate(0deg)";
-        rect3.value.style.transform = "rotate(0deg)";
-        rect1.value.style.transform = "translateY(9px)";
-        rect3.value.style.transform = "translateY(-9px)";
+        rect1Animate.style.transition = "transform 0.5s";
+        rect3Animate.style.transition = "transform 0.5s";
+        rect1Animate.style.transform = "rotate(0deg)";
+        rect3Animate.style.transform = "rotate(0deg)";
+        rect1Animate.style.transform = "translateY(9px)";
+        rect3Animate.style.transform = "translateY(-9px)";
 
         setTimeout(() => {
-            rect2.value.style.backgroundColor = "";
+            rect2Animate.style.backgroundColor = "";
         }, 500);
 
         setTimeout(() => {
-            rect1.value.style.transform = "translateY(-1%)";
-            rect3.value.style.transform = "translateY(1%)";
+            rect1Animate.style.transform = "translateY(-1%)";
+            rect3Animate.style.transform = "translateY(1%)";
         }, 500);
 
-        console.log("Dropdown aus");
     }
-});*/
+}
 
 const toggleDark = useToggle(isDark);
 const navDropdownMenu = ref(false);
 
 const toggleDropdown = () => {
     navDropdownMenu.value = !navDropdownMenu.value;
+    let bool = navDropdownMenu.value
     if (navDropdownMenu.value) {
-        console.log("Nav Menu an \n", navDropdownMenu.value);
+        console.log(`Nav Menu an \n${bool}`);
         document.body.style.overflow = "hidden";
     } else {
-        console.log("Nav Menu aus");
+        console.log(`Nav Menu aus \n${bool}`);
         document.body.style.overflow = "initial";
     }
 };
